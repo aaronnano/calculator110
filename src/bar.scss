@@ -1,0 +1,61 @@
+
+
+$disabledColor: rgb(169, 167, 167);
+
+.bar {
+    box-sizing: border-box;
+    padding: 35px 27%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    
+    .list {
+        display: flex;
+        justify-content: space-around;
+        .list-item {
+            // display: flex;
+            // flex-direction: column;
+        }
+        .space {
+            padding: 0px 30px;
+        }
+        .label {
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .item {
+            width: 100%;
+            margin-bottom: 10px;
+            background-color: transparent;
+            font-size: 1.2rem;
+            padding: 18px 20px;
+            border-radius: 8px;
+            outline: 2px solid #000;
+            font-weight: 600;
+            cursor: pointer;
+            
+            &:disabled {
+                outline: 2px solid $disabledColor;
+                cursor: no-drop;
+                * {
+                    color: $disabledColor
+                }
+                &:active {
+                    background-color: transparent;
+                    .invert {
+                        color: $disabledColor;
+                    }
+                }
+            }
+
+            &:active {
+                background-color: #000;
+                .invert {
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}

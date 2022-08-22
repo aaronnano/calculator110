@@ -1,8 +1,47 @@
-$main: rgb(182, 234, 234);
-$fontOne: 30px;
+@use 'variables' as *;
 
-
-h3 {
-    color: $main;
-    font-size: $fontOne;
+.__init {
+    padding: $pad_display;
+    padding-bottom: 20px;
 }
+h2 {
+    padding: $pad_card;
+}
+h3 {
+    padding: $pad_card;
+    color: #000;
+    font-size: 1.2rem;
+    box-shadow: $borderShadow;
+    border-radius: $radius;
+    text-align: center;
+
+    cursor: pointer;
+
+    &:active {
+        background-color: $main2;
+
+    }
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: $pad_card;
+    font-size: 1rem;
+    box-shadow: $borderShadow;
+    border-radius: $radius;
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .__init {
+        padding: 0px 15%;
+        padding-bottom: 20px;
+    }
+}
+
